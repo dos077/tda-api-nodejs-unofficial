@@ -8,8 +8,8 @@ export default ({ authentication }) => {
     return await getById({ ...params, getAccessToken });
   };
 
-  const gets = async () => {
-    return await getAccounts({ getAccessToken });
+  const gets = async (params) => {
+    return await getAccounts({ params, getAccessToken });
   };
 
   return { getAccounts: gets, getAccount: get };

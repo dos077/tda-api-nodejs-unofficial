@@ -1,5 +1,6 @@
 const equity = async ({
   accountId,
+  orderId,
   quantity,
   symbol,
   orderType,
@@ -9,7 +10,7 @@ const equity = async ({
 }) => {
   const accessToken = await getAccessToken();
   const url = new URL(
-    `https://api.tdameritrade.com/v1/accounts/${accountId}/orders`
+    `https://api.tdameritrade.com/v1/accounts/${accountId}/orders/${orderId}`
   );
   const data = {
     orderType: orderType,
