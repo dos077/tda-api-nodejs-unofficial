@@ -3,7 +3,10 @@
   "version": "0.1.1",
   "description": "TD Ameritrade API node.js wrapper for front-end integration",
   "license": "MIT",
-  "repository": "@i077/tda-api-nodejs-unofficial",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dos077/tda-api-nodejs-unofficial"
+  },
   "main": "src/index.js",
   "keywords": [
     "tdameritrade",
