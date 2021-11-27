@@ -9,9 +9,9 @@ The official documentations on TD Ameritrade's API can be found on their website
 
 
 ### Signing up and creating your app with TD Ameritrade
-Go to [TD Ameritrade for developers](https://developer.tdameritrade.com/), register, under "My Apps" click "add new app". Follow the instruction. Most important part is callback URL, the URL of your webapp that will capture the oAuth code that's passed back to authenticate the user on  your webapp. If you are only interested in testing unauthenticated calls or testing with my web demos, use https://github.com/dos077/tdapi-vue-dos077
+Go to [TD Ameritrade for developers](https://developer.tdameritrade.com/), register, under "My Apps" click "add new app". Follow the instruction. Most important part is callback URL, the URL of your webapp that will capture the oAuth code that's passed back to authenticate the user on  your webapp. Once your app is approved, copy the consumer key, add "@AMER.OAUTHAP" at the end, this is the clientId. If you are only interested in testing unauthenticated calls or testing with my web demos:
 
-Once your app is approved, copy the consumer key, this is the clientId.
+vue frontend demo: [https://dos077.github.io/api-demo-vue/](https://dos077.github.io/api-demo-vue/)
 
 ### Installation
 This library is distributed on npm. Run the following command in your project:
