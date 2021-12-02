@@ -1,10 +1,3 @@
-const defaultConfig = {
-  clientId: null,
-  redirectUri: null,
-  storeAuth: false,
-  logInRedirect: false,
-};
-
 import Authentication from './auth';
 import Orders from './orders';
 import Accounts from './acc';
@@ -14,6 +7,13 @@ import OptionChains from './optionChains';
 import PriceHistory from './priceHistory';
 import Quotes from './quotes';
 import TransactionHistory from './transactionHistory';
+
+const defaultConfig = {
+  clientId: null,
+  redirectUri: null,
+  storeAuth: false,
+  logInRedirect: false,
+};
 
 export default ({
   clientId = defaultConfig.clientId,
