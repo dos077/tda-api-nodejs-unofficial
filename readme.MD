@@ -12,6 +12,7 @@ The official documentations on TD Ameritrade's API can be found on their website
 Go to [TD Ameritrade for developers](https://developer.tdameritrade.com/), register, under "My Apps" click "add new app". Follow the instruction. Most important part is callback URL, the URL of your webapp that will capture the oAuth code that's passed back to authenticate the user on  your webapp. Once your app is approved, copy the consumer key, add "@AMER.OAUTHAP" at the end, this is the clientId. If you are only interested in testing unauthenticated calls or testing with my web demos:
 
 vue frontend demo: [https://dos077.github.io/api-demo-vue/](https://dos077.github.io/api-demo-vue/)
+react frontend demo: [https://dos077.github.io/api-demo-react/](https://dos077.github.io/api-demo-react/)
 
 ### Installation
 This library is distributed on npm. Run the following command in your project:
@@ -24,7 +25,7 @@ $ npm install @i077/tda-api-nodejs-unofficial
 import APIwrapper from '@i077/tda-api-nodejs-unofficial';
 
 // initializing a client for TDA API
-const client = APITwrapper({
+const client = APIwrapper({
   clientId: 'consumer key from your app',
   redirectUri: 'redirect URL for oAuth code',
   storeAuth: false, // store refresh token in localStorage, default is false
