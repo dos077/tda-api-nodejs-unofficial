@@ -13,6 +13,7 @@ const defaultConfig = {
   redirectUri: null,
   storeAuth: false,
   logInRedirect: false,
+  scope: null,
 };
 
 export default ({
@@ -20,6 +21,7 @@ export default ({
   redirectUri = defaultConfig.redirectUri,
   storeAuth = defaultConfig.storeAuth,
   logInRedirect = defaultConfig.logInRedirect,
+  scope = defaultConfig.scope,
   afterLogIn,
   afterLogOut,
 }) => {
@@ -29,6 +31,7 @@ export default ({
     redirectUri,
     storeAuth,
     logInRedirect,
+    scope,
     afterLogIn,
     afterLogOut,
   };

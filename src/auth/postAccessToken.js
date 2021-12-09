@@ -1,4 +1,10 @@
-export default async ({ oAuthCode, refreshToken, clientId, redirectUri }) => {
+export default async ({
+  oAuthCode,
+  refreshToken,
+  clientId,
+  redirectUri,
+  scope,
+}) => {
   const url = new URL('https://api.tdameritrade.com/v1/oauth2/token');
   const data = new URLSearchParams();
   data.append('grant_type', oAuthCode ? 'authorization_code' : 'refresh_token');
@@ -8,6 +14,7 @@ export default async ({ oAuthCode, refreshToken, clientId, redirectUri }) => {
   } else data.append('refresh_token', refreshToken);
   data.append('client_id', clientId);
   data.append('redirect_uri', redirectUri);
+  if (scope) data.append('scope', scope.join(' '));
   const options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

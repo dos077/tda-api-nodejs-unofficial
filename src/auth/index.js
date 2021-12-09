@@ -69,6 +69,8 @@ export default (config) => {
       url.searchParams.append('response_type', 'code');
       url.searchParams.append('redirect_uri', config.redirectUri);
       url.searchParams.append('client_id', config.clientId);
+      if (config.scope)
+        url.searchParams.append('scope', config.scope.join(' '));
       location.href = url.toString();
     }
     await getAccessToken();

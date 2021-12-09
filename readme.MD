@@ -1,6 +1,6 @@
 # @i077/tda-api-nodejs-unofficial
 
-Unofficial Node.js wrapper for TD Ameritrade's API. Custom implementation for authorization flows for tokens handling.
+Unofficial Node.js wrapper for TD Ameritrade's API. Custom implementation for authorization flows for tokens handling and access scope.
 
 ## TD Ameritrade API
 The official documentations on TD Ameritrade's API can be found on their website [TD Ameritrade for developers](https://developer.tdameritrade.com/). Not all of its endpoint is included in this client.
@@ -30,6 +30,7 @@ const client = APIwrapper({
   redirectUri: 'redirect URL for oAuth code',
   storeAuth: false, // store refresh token in localStorage, default is false
   logInRedirect: false, // redirect if attempt to login without a stored refresh token or oAuth code
+  scope: ['PlaceTrades', 'AccountAccess', 'MoveMoney'], // scope for the access grant
   afterLogIn: () => console.log('client access granted'), // function to run after successful login
   afterLogOut: () => console.log('client access revoked'), // function to run after successful logout
 });
@@ -44,7 +45,7 @@ testLogQuote();
 ```
 
 ### Authentication
-TD Ameritrade API follows OAuth2's authentication. However, the implementation seems to be incomplete and consequently insecure, namely the lack of scopes and revoking grant. I've poked around and tried at least adding revoke access back to the API, but their access controls is incomplete and consequently, access tokens cannot be revoked. Refresh token is revokable and per OAuth's documentation, this should revoke the whole grant, unfortunately, not the case with TD. It could be updated in the future, for now, just know that logging out will only revoke the refresh token and the access token will expires 30 minutes after its grant.
+TD Ameritrade API follows OAuth2's authentication. However, the implementation seems to be incomplete and consequently insecure, ~~namely the lack of scopes and~~ revoking grant. I've poked around and tried at least adding revoke access back to the API, but their access controls is incomplete and consequently, access tokens cannot be revoked. Refresh token is revokable and per OAuth's documentation, this should revoke the whole grant, unfortunately, not the case with TD. It could be updated in the future, for now, just know that logging out will only revoke the refresh token and the access token will expires 30 minutes after its grant.
 
 Also note that there are APIs that doesn't require log in. Generally they will return delayed data and calls are subject to lower per app limit.
 ``` js
