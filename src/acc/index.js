@@ -9,7 +9,7 @@ export default ({ authentication }) => {
   };
 
   const gets = async (params) => {
-    return await getAccounts({ params, getAccessToken });
+    return await getAccounts({ ...params, getAccessToken });
   };
 
   return { getAccounts: gets, getAccount: get };

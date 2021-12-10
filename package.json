@@ -1,6 +1,6 @@
 {
   "name": "@i077/tda-api-nodejs-unofficial",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "TD Ameritrade API node.js wrapper for front-end integration",
   "license": "MIT",
   "repository": {
@@ -11,6 +11,8 @@
   "keywords": [
     "tdameritrade",
     "api",
+    "node",
+    "js",
     "npm",
     "package"
   ]
